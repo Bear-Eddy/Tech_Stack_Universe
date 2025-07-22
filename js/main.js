@@ -1,12 +1,5 @@
 // Import tech data if available, otherwise use basic data
-let techStackData;
-try {
-    // Try to use detailed data if available
-    if (typeof techStackDetailed !== 'undefined') {
-        techStackData = techStackDetailed;
-    } else {
-        // Fallback to basic data
-        techStackData = [
+let techStackData = [
     {
         title: "👤 User Interface Layer",
         items: [
@@ -271,11 +264,11 @@ try {
             }
         ]
     }
-        ];
-    }
-} catch (e) {
-    // Use basic data on error
-    techStackData = techStack;
+];
+
+// Override with detailed data if available
+if (typeof techStackDetailed !== 'undefined') {
+    techStackData = techStackDetailed;
 }
 
 // Modal functionality
@@ -669,13 +662,7 @@ function initMobileMenu() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize homepage features if on homepage
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
-        // Since scripts are already loaded via HTML, just initialize directly
-        initStackVisualization();
-        createAppSelector();
-    }
-    
+    // Initialize particles and mobile menu immediately
     createParticles();
     initMobileMenu();
     
