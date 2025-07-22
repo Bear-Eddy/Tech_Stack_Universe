@@ -53,21 +53,19 @@
     <script src="js/techData.js"></script>
     <script src="js/main.js"></script>
     <script>
-        // Page-specific initialization - ensure all scripts are loaded
-        window.addEventListener('load', function() {
-            // Override with detailed data if available
-            if (typeof techStackDetailed !== 'undefined') {
-                techStackData = techStackDetailed;
-            }
-            
-            // Initialize the visualization
-            if (typeof initStackVisualization === 'function') {
-                initStackVisualization();
-            }
-            if (typeof createAppSelector === 'function') {
-                createAppSelector();
-            }
-        });
+        // Page-specific initialization - run immediately since scripts are loaded in order
+        // Override with detailed data if available
+        if (typeof techStackDetailed !== 'undefined') {
+            techStackData = techStackDetailed;
+        }
+        
+        // Initialize the visualization
+        if (typeof initStackVisualization === 'function') {
+            initStackVisualization();
+        }
+        if (typeof createAppSelector === 'function') {
+            createAppSelector();
+        }
     </script>
 </body>
 </html>
