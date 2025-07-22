@@ -1,4 +1,4 @@
-# Tech Stack Universe 🚀
+# The Stack Atlas 🗺️
 
 An interactive visualization of modern technology stacks that helps developers understand the layers of application development and choose the right technologies for their projects.
 
@@ -37,7 +37,7 @@ An interactive visualization of modern technology stacks that helps developers u
 ## 📁 Project Structure
 
 ```
-Tech_Stack_Universe/
+The_Stack_Atlas/
 ├── index.html          # Main visualization page
 ├── explorer.html       # Tech Explorer page
 ├── resources.html      # Learning resources
