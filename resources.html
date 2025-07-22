@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Tech Stack Universe</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .resource-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+        }
+        
+        .resource-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .resource-icon {
+            font-size: 1.5em;
+        }
+        
+        .resource-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .resource-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .resource-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+        
+        .resource-link {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            color: #667eea;
+        }
+        
+        .resource-description {
+            color: #8892b0;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .learning-path {
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .path-step {
+            display: flex;
+            align-items: start;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .path-step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: rgba(102, 126, 234, 0.3);
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        
+        .step-content p {
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <!-- Navigation -->
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <nav>
+                <a href="index.html" class="logo">Tech Stack Universe</a>
+                <button class="mobile-menu-toggle" type="button">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explorer.html">Tech Explorer</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Learning Resources</h1>
+            <p>Curated resources to master modern technology stacks</p>
+        </div>
+
+        <div class="content-section">
+            <div class="card">
+                <h2>Start Your Journey</h2>
+                <p>Whether you're just beginning or looking to expand your skills, these resources will help you navigate the modern technology landscape. We've organized them by category to help you find exactly what you need.</p>
+            </div>
+
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3><span class="resource-icon">📚</span> Documentation & References</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="https://developer.mozilla.org" class="resource-link" target="_blank">MDN Web Docs</a>
+                            <p class="resource-description">Comprehensive documentation for web technologies</p>
+                        </li>
+                        <li>
+                            <a href="https://devdocs.io" class="resource-link" target="_blank">DevDocs</a>
+                            <p class="resource-description">Fast, offline API documentation browser</p>
+                        </li>
+                        <li>
+                            <a href="https://w3schools.com" class="resource-link" target="_blank">W3Schools</a>
+                            <p class="resource-description">Web development tutorials and references</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3><span class="resource-icon">🎓</span> Online Learning Platforms</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="https://freecodecamp.org" class="resource-link" target="_blank">freeCodeCamp</a>
+                            <p class="resource-description">Free coding bootcamp with certifications</p>
+                        </li>
+                        <li>
+                            <a href="https://codecademy.com" class="resource-link" target="_blank">Codecademy</a>
+                            <p class="resource-description">Interactive coding lessons</p>
+                        </li>
+                        <li>
+                            <a href="https://coursera.org" class="resource-link" target="_blank">Coursera</a>
+                            <p class="resource-description">University-level courses online</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3><span class="resource-icon">🛠️</span> Development Tools</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="https://code.visualstudio.com" class="resource-link" target="_blank">Visual Studio Code</a>
+                            <p class="resource-description">Popular code editor with extensions</p>
+                        </li>
+                        <li>
+                            <a href="https://github.com" class="resource-link" target="_blank">GitHub</a>
+                            <p class="resource-description">Code hosting and collaboration platform</p>
+                        </li>
+                        <li>
+                            <a href="https://codepen.io" class="resource-link" target="_blank">CodePen</a>
+                            <p class="resource-description">Online code editor and community</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3><span class="resource-icon">👥</span> Communities & Forums</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="https://stackoverflow.com" class="resource-link" target="_blank">Stack Overflow</a>
+                            <p class="resource-description">Q&A platform for developers</p>
+                        </li>
+                        <li>
+                            <a href="https://dev.to" class="resource-link" target="_blank">DEV Community</a>
+                            <p class="resource-description">Community of software developers</p>
+                        </li>
+                        <li>
+                            <a href="https://reddit.com/r/programming" class="resource-link" target="_blank">Reddit Programming</a>
+                            <p class="resource-description">Programming discussions and news</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3><span class="resource-icon">📺</span> Video Tutorials</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="https://youtube.com/traversymedia" class="resource-link" target="_blank">Traversy Media</a>
+                            <p class="resource-description">Web development tutorials</p>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/programmingwithmosh" class="resource-link" target="_blank">Programming with Mosh</a>
+                            <p class="resource-description">Clean code tutorials</p>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/freecodecamp" class="resource-link" target="_blank">freeCodeCamp YouTube</a>
+                            <p class="resource-description">Full courses and tutorials</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3><span class="resource-icon">📖</span> Books & Articles</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="https://eloquentjavascript.net" class="resource-link" target="_blank">Eloquent JavaScript</a>
+                            <p class="resource-description">Modern introduction to JavaScript</p>
+                        </li>
+                        <li>
+                            <a href="https://javascript.info" class="resource-link" target="_blank">The Modern JavaScript Tutorial</a>
+                            <p class="resource-description">From basics to advanced topics</p>
+                        </li>
+                        <li>
+                            <a href="https://css-tricks.com" class="resource-link" target="_blank">CSS-Tricks</a>
+                            <p class="resource-description">Tips, tricks, and techniques on CSS</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="learning-path">
+                <h2 style="color: #fff; margin-bottom: 30px;">Suggested Learning Path</h2>
+                
+                <div class="path-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Master the Fundamentals</h4>
+                        <p>Start with HTML, CSS, and JavaScript. These are the building blocks of web development. Understand how they work together to create interactive web pages.</p>
+                    </div>
+                </div>
+
+                <div class="path-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Choose a Frontend Framework</h4>
+                        <p>Once comfortable with the basics, pick a framework like React, Vue, or Angular. Start with small projects and gradually build more complex applications.</p>
+                    </div>
+                </div>
+
+                <div class="path-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Learn Backend Development</h4>
+                        <p>Explore server-side programming with Node.js, Python, or Java. Understand databases, APIs, and how to connect your frontend to a backend.</p>
+                    </div>
+                </div>
+
+                <div class="path-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Understand DevOps & Deployment</h4>
+                        <p>Learn about version control with Git, containerization with Docker, and deployment strategies. These skills are essential for professional development.</p>
+                    </div>
+                </div>
+
+                <div class="path-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Never Stop Learning</h4>
+                        <p>Technology evolves rapidly. Stay current by following tech blogs, contributing to open source, and building personal projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="explorer.html">Tech Explorer</a>
+                <a href="resources.html">Resources</a>
+            </div>
+            <p class="footer-text">© 2024 Tech Stack Universe. Exploring the layers of modern development.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
