@@ -669,21 +669,11 @@ function initMobileMenu() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Load tech data if on homepage
+    // Initialize homepage features if on homepage
     if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
-        // Load app types first
-        const appTypesScript = document.createElement('script');
-        appTypesScript.src = 'js/appTypes.js';
-        document.head.appendChild(appTypesScript);
-        
-        // Then load tech data
-        const techDataScript = document.createElement('script');
-        techDataScript.src = 'js/techData.js';
-        techDataScript.onload = () => {
-            initStackVisualization();
-            createAppSelector();
-        };
-        document.head.appendChild(techDataScript);
+        // Since scripts are already loaded via HTML, just initialize directly
+        initStackVisualization();
+        createAppSelector();
     }
     
     createParticles();
